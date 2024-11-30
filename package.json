@@ -9,7 +9,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "generate": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./apis -c ./openapi.json",
+    "template": "openapi-generator-cli author template -g typescript-axios -o ./mustaches",
+    "generate:api": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./apis -t ./mustaches -c ./openapi.json --skip-validate-spec"
   },
   "jest": {
     "preset": "jest-expo"
@@ -17,10 +20,12 @@
   "dependencies": {
     "@babel/runtime": "^7.26.0",
     "@expo/vector-icons": "^14.0.2",
+    "@openapitools/openapi-generator-cli": "^2.15.3",
     "@react-native-community/netinfo": "11.4.1",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/elements": "^2.2.0",
     "@react-navigation/native": "^7.0.0",
+    "axios": "^1.7.8",
     "expo": "~52.0.11",
     "expo-blur": "~14.0.1",
     "expo-constants": "~17.0.3",
