@@ -12,37 +12,34 @@
  * Do not edit the class manually.
  */
 
-
-
 /**
- * 
+ *
  * @export
  * @interface Address
  */
 export interface Address {
-    /**
-     * 
-     * @type {string}
-     * @memberof Address
-     */
-    'street'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Address
-     */
-    'city'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Address
-     */
-    'state'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Address
-     */
-    'zip'?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  street?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  city?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  state?: string;
+  /**
+   *
+   * @type {string}
+   * @memberof Address
+   */
+  zip?: string;
 }
-

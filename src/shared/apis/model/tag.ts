@@ -12,25 +12,22 @@
  * Do not edit the class manually.
  */
 
-
-
 /**
- * 
+ *
  * @export
  * @interface Tag
  */
 export interface Tag {
-    /**
-     * 
-     * @type {number}
-     * @memberof Tag
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof Tag
-     */
-    'name'?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof Tag
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof Tag
+   */
+  name?: string;
 }
-

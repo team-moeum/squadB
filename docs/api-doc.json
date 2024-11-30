@@ -224,10 +224,7 @@
           "400": { "description": "Invalid ID supplied" },
           "404": { "description": "Pet not found" }
         },
-        "security": [
-          { "api_key": [] },
-          { "petstore_auth": ["write:pets", "read:pets"] }
-        ]
+        "security": [{ "api_key": [] }, { "petstore_auth": ["write:pets", "read:pets"] }]
       },
       "post": {
         "tags": ["pet"],

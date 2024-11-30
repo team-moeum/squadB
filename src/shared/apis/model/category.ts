@@ -12,25 +12,22 @@
  * Do not edit the class manually.
  */
 
-
-
 /**
- * 
+ *
  * @export
  * @interface Category
  */
 export interface Category {
-    /**
-     * 
-     * @type {number}
-     * @memberof Category
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof Category
-     */
-    'name'?: string;
+  /**
+   *
+   * @type {number}
+   * @memberof Category
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof Category
+   */
+  name?: string;
 }
-

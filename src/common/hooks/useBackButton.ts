@@ -21,10 +21,7 @@ export function useBackButton() {
       return true;
     };
 
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      handleBackPress
-    );
+    const backHandler = BackHandler.addEventListener("hardwareBackPress", handleBackPress);
 
     return () => {
       backHandler.remove();

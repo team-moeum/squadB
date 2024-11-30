@@ -12,58 +12,54 @@
  * Do not edit the class manually.
  */
 
-
-
 /**
- * 
+ *
  * @export
  * @interface Order
  */
 export interface Order {
-    /**
-     * 
-     * @type {number}
-     * @memberof Order
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof Order
-     */
-    'petId'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof Order
-     */
-    'quantity'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof Order
-     */
-    'shipDate'?: string;
-    /**
-     * Order Status
-     * @type {string}
-     * @memberof Order
-     */
-    'status'?: OrderStatus;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof Order
-     */
-    'complete'?: boolean;
+  /**
+   *
+   * @type {number}
+   * @memberof Order
+   */
+  id?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof Order
+   */
+  petId?: number;
+  /**
+   *
+   * @type {number}
+   * @memberof Order
+   */
+  quantity?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof Order
+   */
+  shipDate?: string;
+  /**
+   * Order Status
+   * @type {string}
+   * @memberof Order
+   */
+  status?: OrderStatus;
+  /**
+   *
+   * @type {boolean}
+   * @memberof Order
+   */
+  complete?: boolean;
 }
 
 export const OrderStatus = {
-    Placed: 'placed',
-    Approved: 'approved',
-    Delivered: 'delivered'
+  Placed: "placed",
+  Approved: "approved",
+  Delivered: "delivered"
 } as const;
 
-export type OrderStatus = typeof OrderStatus[keyof typeof OrderStatus];
-
-
+export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus];

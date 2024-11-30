@@ -12,34 +12,32 @@
  * Do not edit the class manually.
  */
 
-
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Address } from './address';
+import type { Address } from "./address";
 
 /**
- * 
+ *
  * @export
  * @interface Customer
  */
 export interface Customer {
-    /**
-     * 
-     * @type {number}
-     * @memberof Customer
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof Customer
-     */
-    'username'?: string;
-    /**
-     * 
-     * @type {Array<Address>}
-     * @memberof Customer
-     */
-    'address'?: Array<Address>;
+  /**
+   *
+   * @type {number}
+   * @memberof Customer
+   */
+  id?: number;
+  /**
+   *
+   * @type {string}
+   * @memberof Customer
+   */
+  username?: string;
+  /**
+   *
+   * @type {Array<Address>}
+   * @memberof Customer
+   */
+  address?: Array<Address>;
 }
-
