@@ -10,9 +10,9 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "generate": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./apis -c ./openapi.json",
+    "generate": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./shared/apis -c ./openapi.json",
     "template": "openapi-generator-cli author template -g typescript-axios -o ./mustaches",
-    "generate:api": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./apis -t ./mustaches -c ./openapi.json --skip-validate-spec"
+    "generate:api": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o  ./shared/apis -t ./mustaches -c ./openapi.json --skip-validate-spec"
   },
   "jest": {
     "preset": "jest-expo"

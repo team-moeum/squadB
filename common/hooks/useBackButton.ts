@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { BackHandler } from "react-native";
-import { notify } from "@/utils/notify";
+import { notify } from "@moeum/common/utils/notify";
 
 export function useBackButton() {
   const isExit = useRef(false);
