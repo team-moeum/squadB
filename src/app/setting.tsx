@@ -1,4 +1,13 @@
 import { Text, View } from "react-native";
+import {
+  AlertDialog,
+  AlertDialogBackdrop,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogCloseButton,
+  AlertDialogFooter,
+  AlertDialogBody
+} from "@moeum/common/components/ui/alert-dialog";
 
 export default function SettingsScreen() {
   return (
