@@ -4,7 +4,9 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@moeum/*": ["src/*"]
+      "@moeum/*": ["src/*"],
+      "@/*": ["./*"],
+      "tailwind.config": ["./tailwind.config.js"]
     }
   },
   "include": [

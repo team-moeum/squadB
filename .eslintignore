@@ -2,3 +2,6 @@
 node_modules
 .nvmrc
 .vscode
+
+#gluestack-ui-components
+src/common/components/ui
