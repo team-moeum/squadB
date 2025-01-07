@@ -7,8 +7,8 @@ export default function RootLayout() {
   return (
     <GluestackUIProvider mode="light">
       <Tabs initialRouteName="index" screenOptions={{ headerShown: false }}>
-        <Tabs.Screen name="index" options={{ title: "home" }} />
-        <Tabs.Screen name="setting" options={{ title: "setting" }} />
+        <Tabs.Screen name="index" options={{ title: "캘린더" }} />
+        <Tabs.Screen name="diary" options={{ title: "다이어리" }} />
       </Tabs>
     </GluestackUIProvider>
   );
