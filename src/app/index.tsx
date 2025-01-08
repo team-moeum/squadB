@@ -1,27 +1,48 @@
-import { Button } from "react-native";
-import { Text, View } from "react-native";
-// import { create } from "zustand";
+import React, { useState, useEffect } from "react";
+import { View } from "react-native";
+import { Agenda } from "react-native-calendars";
+import agendaTheme from "@moeum/features/calendar/constants/agendaTheme";
 
-// const useStore = create(set => ({
-//   bears: 0,
-//   increasePopulation: () => set((state: any) => ({ bears: state.bears + 1 })),
-//   removeAllBears: () => set({ bears: 0 }),
-//   updateBears: (newBears: any) => set({ bears: newBears })
-// }));
+import { setupLocale } from "@moeum/features/calendar/constants/localeConfig";
+import { loadItems } from "@moeum/features/calendar/utils/loadItems";
+import { RenderEmptyDate } from "@moeum/features/calendar/components/RenderEmptyDate";
+import { RenderItem } from "@moeum/features/calendar/components/RenderItem";
 
-// function BearCounter() {
-//   const bears = useStore((state: any) => state.bears);
-//   return <Text>{bears} around here...</Text>;
-// }
+setupLocale();
 
 export default function HomeScreen() {
-  // const increasePopulation = useStore((state: any) => state.increasePopulation);
+  const [items, setItems] = useState<{ [key: string]: any[] }>({});
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]);
+  const today = new Date();
+
+  useEffect(() => {
+    const startDate = new Date(today);
+    startDate.setDate(today.getDate() - 30);
+
+    const endDate = new Date(today);
+    endDate.setDate(today.getDate() + 30);
+
+    setItems(loadItems(startDate, endDate));
+  }, []);
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Zustand</Text>
-      {/* <Button title="버튼" onPress={increasePopulation} /> */}
-      {/* <BearCounter /> */}
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <Agenda
+        items={items}
+        selected={selectedDate}
+        renderItem={item => {
+          if (!item) {
+            console.warn("item이 null이거나 undefined입니다.");
+            return null;
+          }
+          return <RenderItem item={item} />;
+        }}
+        renderEmptyDate={() => <RenderEmptyDate />}
+        pastScrollRange={2}
+        futureScrollRange={2}
+        onDayPress={day => setSelectedDate(day.dateString)}
+        theme={agendaTheme}
+      />
     </View>
   );
 }

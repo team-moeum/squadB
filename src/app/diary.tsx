@@ -9,10 +9,10 @@ import {
   AlertDialogBody
 } from "@moeum/common/components/ui/alert-dialog";
 
-export default function SettingsScreen() {
+export default function DiaryScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Settings</Text>
+      <Text>다이어리</Text>
     </View>
   );
 }
