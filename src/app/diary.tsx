@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
 import { agendaItems } from "@/src/features/diary/constants/mock";
 
 const getWeekDates = (date: string) => {
@@ -73,7 +73,7 @@ const ExpandableCalendarScreen: React.FC = () => {
       </View>
 
       <View style={styles.list}>
-        <Text style={styles.selectedDateText}>선택된 날짜: {selectedDate}</Text>
+        <Text style={styles.selectedDateText}>{selectedDate}</Text>
         {filteredData.length === 0 ? (
           <Text>이 날짜에는 매매일지가 없습니다.</Text>
         ) : (
@@ -81,6 +81,7 @@ const ExpandableCalendarScreen: React.FC = () => {
             <View key={item.key} style={styles.item}>
               <Text style={styles.itemTitle}>{item.title}</Text>
               <Text style={styles.itemContent}>{item.content}</Text>
+              {item.image && <Image source={{ uri: item.image }} style={styles.itemImage} />}
             </View>
           ))
         )}
@@ -142,6 +143,12 @@ const styles = StyleSheet.create({
   },
   itemContent: {
     color: "grey"
+  },
+  itemImage: {
+    width: 100,
+    height: 100,
+    resizeMode: "cover",
+    marginTop: 10
   }
 });
 
