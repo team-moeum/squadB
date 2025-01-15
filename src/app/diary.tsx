@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { Link } from "expo-router";
 import { agendaItems } from "@/src/features/diary/constants/mock";
 
 const getWeekDates = (date: string) => {
@@ -22,7 +23,6 @@ const ExpandableCalendarScreen: React.FC = () => {
   const today = new Date().toISOString().split("T")[0];
   const [selectedDate, setSelectedDate] = useState<string>(today);
   const [filteredData, setFilteredData] = useState<any[]>([]);
-
   const [weekDates, setWeekDates] = useState<string[]>(getWeekDates(today));
 
   const changeWeek = (direction: "previous" | "next") => {
@@ -86,6 +86,10 @@ const ExpandableCalendarScreen: React.FC = () => {
           ))
         )}
       </View>
+
+      <Link href="/addDiary" style={styles.addButton}>
+        <Text style={styles.addButtonText}>매매일지 추가</Text>
+      </Link>
     </View>
   );
 };
@@ -149,6 +153,16 @@ const styles = StyleSheet.create({
     height: 100,
     resizeMode: "cover",
     marginTop: 10
+  },
+  addButton: {
+    padding: 10,
+    backgroundColor: "#007BFF",
+    borderRadius: 5,
+    marginTop: 20
+  },
+  addButtonText: {
+    color: "#fff",
+    textAlign: "center"
   }
 });
 
