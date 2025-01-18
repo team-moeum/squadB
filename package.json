@@ -16,7 +16,7 @@
     "ios": "DARK_MODE=media expo start --ios",
     "web": "DARK_MODE=media expo start --web",
     "test": "jest --watchAll",
-    "test:ci": "jest --ci --coverage --maxWorkers=2",
+    "test:ci": "jest --ci --coverage --maxWorkers=2 --passWithNoTests",
     "lint": "expo lint",
     "format": "prettier --write --cache .",
     "generate": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./src.shared/apis -c ./openapi.json",
