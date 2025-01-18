@@ -2,8 +2,8 @@ import "dotenv/config";
 
 export default {
   expo: {
-    name: "RNBoilerplate",
-    slug: "RNBoilerplate",
+    name: "stocky",
+    slug: "stocky",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/images/icon.png",
@@ -14,10 +14,10 @@ export default {
       policy: "sdkVersion"
     },
     updates: {
-      url: "https://u.expo.dev/f345cdac-62b0-41d8-b7a4-5450aca69da5"
+      url: "https://u.expo.dev/b676e53b-10db-4a53-b056-44d67c1fbf07"
     },
     ios: {
-      bundleIdentifier: "com.kr.moeum",
+      bundleIdentifier: "com.moeum.stocky",
       buildNumber: "1",
       supportsTablet: true,
       entitlements: {
@@ -25,7 +25,7 @@ export default {
       }
     },
     android: {
-      package: "co.kr.moeum",
+      package: "com.moeum.stocky",
       versionCode: 1,
       adaptiveIcon: {
         foregroundImage: "./assets/images/adaptive-icon.png",
@@ -55,7 +55,7 @@ export default {
         origin: false
       },
       eas: {
-        projectId: "f345cdac-62b0-41d8-b7a4-5450aca69da5"
+        projectId: "b676e53b-10db-4a53-b056-44d67c1fbf07"
       }
     },
     owner: "moeum"

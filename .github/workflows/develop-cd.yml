@@ -3,7 +3,7 @@ name: Build Development
 env:
   SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
   EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-  EAS_PROJECT_ID: f345cdac-62b0-41d8-b7a4-5450aca69da5
+  EAS_PROJECT_ID: ${{secrets.EAS_PROJECT_ID}}
   ENV_FILE: ${{ secrets.ENV_FILE }}
 
 on:
