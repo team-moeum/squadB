@@ -7,8 +7,8 @@ env:
   ENV_FILE: ${{ secrets.ENV_FILE }}
 
 on:
-  # pull_request:
-  #   types: [opened, synchronize]
+  pull_request:
+    types: [opened]
   workflow_dispatch:
 
 jobs:
@@ -60,7 +60,7 @@ jobs:
         id: preview
         uses: expo/expo-github-action/preview@v8
         with:
-          command: eas update --auto --branch ${{ github.event.pull_request.head.ref || inputs.branch }} --platform all --message "App Update (#${{ github.event.pull_request.number || github.run_number }})"
+          command: eas update --auto --branch ${{ github.event.pull_request.head.ref || inputs.branch }} --message "App Update (#${{ github.event.pull_request.number || github.run_number }})"
           comment: true
 
       - name: 💬 Notify Slack
