@@ -1,15 +1,10 @@
-name: ci
-
+name: Prepare Action
 on:
-  workflow_dispatch:
-  pull_request:
-    types: [opened, synchronize]
-    branches:
-      - main
+  workflow_call:
 
 jobs:
-  CI:
-    name: ci
+  deploy:
+    environment: inputs.env
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -31,15 +26,3 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Check Lint
-        run: pnpm lint
-
-      - name: Testing
-        run: pnpm test:ci
-
-      - name: Upload coverage reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report
-          path: coverage/
