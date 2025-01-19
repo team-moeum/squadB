@@ -12,6 +12,18 @@
  * Do not edit the class manually.
  */
 
-export * from "./api";
-export * from "./configuration";
-export * from "./model";
+/**
+ *
+ * @export
+ * @interface HealthControllerCheck200ResponseInfoValue
+ */
+export interface HealthControllerCheck200ResponseInfoValue {
+  [key: string]: any;
+
+  /**
+   *
+   * @type {string}
+   * @memberof HealthControllerCheck200ResponseInfoValue
+   */
+  status: string;
+}
