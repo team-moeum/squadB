@@ -1,0 +1,47 @@
+name: OAS Generator
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - "docs/api-doc.json" # API 문서가 업데이트될 때만 실행
+    branches:
+      - dev
+
+jobs:
+  generate-api:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: "pnpm"
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate documentation
+        run: pnpm run generate
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "moeum[bot]@users.noreply.github.com"
+          git config --local user.name "moeum[bot]"
+          git add -A
+          git commit -m "feat: update API using oas [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:${{ github.head_ref }}

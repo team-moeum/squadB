@@ -19,7 +19,7 @@
     "test:ci": "jest --ci --coverage --maxWorkers=2 --passWithNoTests",
     "lint": "expo lint",
     "format": "prettier --write --cache .",
-    "generate": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./src.shared/apis -c ./openapi.json",
+    "generate": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o ./src/shared/apis -c ./openapi.json",
     "template": "openapi-generator-cli author template -g typescript-axios -o ./mustaches",
     "generate:api": "openapi-generator-cli generate -g typescript-axios -i ./docs/api-doc.json -o  ./src/shared/apis -t ./mustaches -c ./openapi.json --skip-validate-spec",
     "postinstall": "patch-package && husky install"
