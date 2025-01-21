@@ -87,7 +87,7 @@ const ExpandableCalendarScreen: React.FC = () => {
         )}
       </View>
 
-      <Link href="/addDiary" style={styles.addButton}>
+      <Link href="diary/addDiary" style={styles.addButton}>
         <Text style={styles.addButtonText}>매매일지 추가</Text>
       </Link>
     </View>
