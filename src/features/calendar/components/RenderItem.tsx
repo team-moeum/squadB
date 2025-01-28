@@ -8,16 +8,25 @@ export const RenderItem = ({ item }: { item: any }) => {
     return null;
   }
 
-  const category = item.category || "카테고리 ";
-  const content = item.content || "내용";
+  const name = item.name || "이벤트";
+  const impact = item.impact || "중요도 없음";
+  const estimate = item.estimate || "예측치 없음";
+  const previous = item.previous || "이전 값 없음";
+  const time = item.time ? new Date(item.time).toLocaleString() : "시간 정보 없음";
+  const actual = item.actual || "실제 값 없음";
+  const country = item.country || "국가 정보 없음";
+  const unit = item.unit || "단위 없음";
 
   return (
-    <Box className="p-4 bg-white rounded-lg mt-4 mb-4 mx-4 flex justify-center h-20">
-      <Text className="font-semibold text-slate-800 mb-2">
-        {category === "경제지표" ? "📊 " : category === "휴장" ? "🏖 " : "📅 "}
-        {category}
-      </Text>
-      <Text className="text-slate-700">{content}</Text>
+    <Box className="p-4 bg-white rounded-lg mt-4 mb-4 mx-4 flex flex-col justify-center">
+      <Text className="font-semibold text-slate-800 mb-2">{name}</Text>
+      <Text className="text-slate-700">국가: {country}</Text>
+      <Text className="text-slate-700">중요도: {impact}</Text>
+      <Text className="text-slate-700">예측치: {estimate}</Text>
+      <Text className="text-slate-700">이전 값: {previous}</Text>
+      <Text className="text-slate-700">실제 값: {actual}</Text>
+      <Text className="text-slate-700">시간: {time}</Text>
+      <Text className="text-slate-700">단위: {unit}</Text>
     </Box>
   );
 };
