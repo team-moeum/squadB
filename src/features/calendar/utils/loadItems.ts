@@ -1,7 +1,5 @@
-import { mockData } from "@moeum/features/calendar/constants/mock";
-
-export const loadItems = (startDate: Date, endDate: Date) => {
-  const formattedItems = {};
+export const loadItems = (startDate: Date, endDate: Date, events: any[]) => {
+  const formattedItems: { [key: string]: any[] } = {};
 
   for (
     let current = new Date(startDate);
@@ -12,7 +10,7 @@ export const loadItems = (startDate: Date, endDate: Date) => {
     formattedItems[dateString] = [];
   }
 
-  mockData.forEach(event => {
+  events.forEach(event => {
     const eventDateString = new Date(event.time).toISOString().split("T")[0];
 
     if (formattedItems[eventDateString]) {
