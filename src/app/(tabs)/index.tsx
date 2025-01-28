@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
-import { Agenda } from "react-native-calendars";
+import { Agenda, AgendaEntry } from "react-native-calendars";
 import agendaTheme from "@moeum/features/calendar/constants/agendaTheme";
 
 import { setupLocale } from "@moeum/features/calendar/constants/localeConfig";
@@ -11,8 +11,8 @@ import { RenderItem } from "@moeum/features/calendar/components/RenderItem";
 setupLocale();
 
 export default function HomeScreen() {
-  const [items, setItems] = useState<{ [key: string]: any[] }>({});
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]);
+  const [items, setItems] = useState<{ [key: string]: AgendaEntry[] }>({});
+  const [selectedDate, setSelectedDate] = useState<string>(new Date().toISOString().split("T")[0]);
   const today = new Date();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function HomeScreen() {
       <Agenda
         items={items}
         selected={selectedDate}
-        renderItem={item => {
+        renderItem={(item: AgendaEntry) => {
           if (!item) {
             console.warn("item이 null이거나 undefined입니다.");
             return null;
@@ -40,7 +40,7 @@ export default function HomeScreen() {
         renderEmptyDate={() => <RenderEmptyDate />}
         pastScrollRange={2}
         futureScrollRange={2}
-        onDayPress={day => setSelectedDate(day.dateString)}
+        onDayPress={(day: { dateString: string }) => setSelectedDate(day.dateString)}
         theme={agendaTheme}
       />
     </View>
