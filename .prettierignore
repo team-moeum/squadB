@@ -4,6 +4,8 @@ node_modules
 .vscode
 README.md
 expo-env.d.ts
+/docs
+pnpm-lock.yaml
 
 #gluestack-ui-components
 src/common/components/ui
