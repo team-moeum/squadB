@@ -38,6 +38,9 @@ jobs:
       - name: Generate documentation
         run: pnpm run generate
 
+      - name: Run Prettier Format
+        run: pnpm run format
+
       - name: Commit and push changes
         run: |
           git config --local user.email "moeum[bot]@users.noreply.github.com"
