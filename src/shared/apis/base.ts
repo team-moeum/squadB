@@ -18,7 +18,10 @@ import type { Configuration } from "./configuration";
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from "axios";
 import globalAxios from "axios";
 
-export const BASE_PATH = "http://localhost".replace(/\/+$/, "");
+export const BASE_PATH = "https://port-0-stocky-server-m5tn1zqkca266e52.sel4.cloudtype.app".replace(
+  /\/+$/,
+  ""
+);
 
 /**
  *
